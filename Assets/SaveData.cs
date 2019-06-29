@@ -7,8 +7,6 @@ public class SaveData : MonoBehaviour
     [SerializeField] private PotionData _PotionData = new PotionData();
 
     public void SaveIntoJson(){
-        Debug.LogWarning(Application.persistentDataPath);
-        Debug.LogWarning(Application.systemLanguage);
         string potion = JsonUtility.ToJson(_PotionData);
         System.IO.File.WriteAllText(Application.persistentDataPath + "/PotionData.json", potion);
     }
